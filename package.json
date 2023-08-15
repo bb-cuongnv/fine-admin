@@ -10,7 +10,7 @@
     "build:gh-pages": "tsc && vite build --base=/fine-admin/"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.8.0",
+    "@ant-design/icons": "^5.2.5",
     "@ant-design/plots": "^1.2.2",
     "@ant-design/pro-components": "^2.3.35",
     "@reduxjs/toolkit": "^1.9.0",
@@ -50,6 +50,6 @@
   },
   "engines": {
     "node": ">=16",
-    "pnpm": ">=7"
+    "npm": ">=8"
   }
 }

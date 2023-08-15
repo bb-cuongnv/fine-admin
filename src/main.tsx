@@ -11,12 +11,12 @@ import { DarkModeConfigProvider } from '@/components/DarkModeSwitch';
 import { ThemeColorConfigProvider } from '@/components/ThemeColors';
 import { ConfigProvider, App } from 'antd';
 import dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn';
-import zhCN from 'antd/locale/zh_CN';
+import 'dayjs/locale/vi';
+import viVN from 'antd/locale/vi_VN';
 import 'antd/dist/reset.css';
 import './App.css';
 
-dayjs.locale('zh-cn');
+dayjs.locale('vi-vn');
 
 initUserInfo();
 
@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <PersistGate loading={null} persistor={persistor}>
       <DarkModeConfigProvider>
         <ThemeColorConfigProvider>
-          <ConfigProvider locale={zhCN} input={{ autoComplete: 'off' }}>
+          <ConfigProvider locale={viVN} input={{ autoComplete: 'off' }}>
             <App>
               <MyApp />
             </App>

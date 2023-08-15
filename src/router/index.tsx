@@ -20,6 +20,7 @@ const AuthRoute = lazy(() => import('./AuthRoute'));
 const ErrorPage = lazy(() => import('@/components/ErrorBoundary'));
 const NotFound = lazy(() => import('@/pages/404'));
 
+// router
 const pageComponentModules = import.meta.glob([
   '@/pages/**/*.tsx',
   '!@/pages/**/components/**/*.tsx'

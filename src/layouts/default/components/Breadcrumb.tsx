@@ -6,6 +6,7 @@ import Icon, { IconType } from '@/components/Icons';
 import { menus, MenuItem } from '@/config/menuConfig';
 import { flatArrTree } from '@/utils/utils';
 import { mapRouteToMenuStatus } from '../useMenu';
+import { ItemType } from 'antd/es/breadcrumb/Breadcrumb';
 
 type BreadcrumbItem = string | { name: string; path?: string; icon?: IconType };
 
@@ -22,6 +23,25 @@ export default function LayoutBreadcrumb() {
   if (breadcrumb.length === 0) {
     return null;
   }
+
+  /* > 5.3 */
+  // let items: ItemType[] = breadcrumb.map((item: any, index: any) => {
+  //   if (typeof item === 'object') {
+  //     return {
+  //       path: item.path,
+  //       breadcrumbName: item.name,
+  //       separator: '/'
+  //     };
+  //   }
+  //   return {
+  //     path: item
+  //   };
+  // });
+  // console.log(items);
+
+  // return <Breadcrumb items={items} />;
+
+  /* <5.3 */
   return (
     <Breadcrumb separator="/">
       {breadcrumb.map((item: any, index: any) => {
@@ -35,7 +55,16 @@ export default function LayoutBreadcrumb() {
             </Breadcrumb.Item>
           );
         }
-        return <Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>;
+        return (
+          <Breadcrumb.Item
+            key={index}
+            onClick={() => {
+              console.log(item);
+            }}
+          >
+            {item}
+          </Breadcrumb.Item>
+        );
       })}
     </Breadcrumb>
   );
